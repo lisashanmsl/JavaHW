@@ -19,6 +19,11 @@ public class Race {
             Move_hare();
             Move_tortise();
             printCurrentPos(); // 每次印出當前位置
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
         if (tortoise_pos >= MAXLENGTH && hare_pos >= MAXLENGTH) {
             System.out.println("It's a tie.");
