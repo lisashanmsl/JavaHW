@@ -19,6 +19,7 @@ public class Race {
             Move_hare();
             Move_tortise();
             printCurrentPos(); // 每次印出當前位置
+            // 每次移動延遲一秒
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
