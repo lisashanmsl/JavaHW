@@ -19,6 +19,7 @@ public class Poker {
         System.out.printf("%nHand2 type: %n");
         rank2 = CheckHand(deck, hand2);
 
+        // 比較牌型大小
         if (rank1 > rank2) {
             System.out.printf("Hand1 is better than hand2.");
         }
@@ -29,6 +30,7 @@ public class Poker {
         }
     }
 
+    // 檢查手牌牌型並記錄等級
     public static int CheckHand(DeckOfCard deck, Card[] hand) {
         int rank = 0;
         if (deck.isPair(hand)) {
@@ -47,7 +49,7 @@ public class Poker {
         }
         if (deck.isFourOfAKind(hand)) {
             System.out.printf("Four of a kind%n");
-            rank = 4;
+            rank = 7;
         }
         if (deck.isFlush(hand)) {
             System.out.printf("A Flush%n");
@@ -56,11 +58,11 @@ public class Poker {
 
         if (deck.isStraight(hand)) {
             System.out.printf("A Straight%n");
-            rank = 6;
+            rank = 4;
         }
         if (deck.isFullHouse(hand)) {
             System.out.printf("A Full House%n");
-            rank = 7;
+            rank = 6;
         }
         return rank;
     }
