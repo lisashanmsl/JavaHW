@@ -21,6 +21,6 @@ public class Card {
     }
 
     public String toString() {// 改寫toString
-        return face + "of" + suit;
+        return face + " of " + suit;
     }
 }

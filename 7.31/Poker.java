@@ -10,6 +10,8 @@ public class Poker {
             hand1[i] = deck.dealCard();
             hand2[i] = deck.dealCard();
         }
+        printHand(hand1);
+        printHand(hand2);
 
         int rank1 = 0;
         int rank2 = 0;
@@ -65,5 +67,13 @@ public class Poker {
             rank = 6;
         }
         return rank;
+    }
+
+    // 印出手牌
+    public static void printHand(Card[] hand) {
+        for (int i = 0; i < 5; i++) {
+            System.out.printf("%s ", hand[i]);
+        }
+        System.out.println();
     }
 }

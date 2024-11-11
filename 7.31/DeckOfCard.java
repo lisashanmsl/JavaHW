@@ -130,10 +130,15 @@ public class DeckOfCard {
                 break;
             }
         }
+
+        if (checkStraight[firstNumIndex] != 1) {
+            return false;
+        }
+
         // 檢查接下來四張牌是否連續
         for (int i = 1; i < 5; i++) {
             // 判斷不成立的情況
-            if (checkStraight[firstNumIndex + i] < 0 || firstNumIndex + i > checkStraight.length) {
+            if (checkStraight[firstNumIndex + i] != 1 || firstNumIndex + i > checkStraight.length) {
                 // 檢查10,J,Q,K,A這組順子
                 if (i == 4 && firstNumIndex == 9) {
                     return (checkStraight[10] == 1 && checkStraight[11] == 1 && checkStraight[12] == 1
@@ -153,13 +158,13 @@ public class DeckOfCard {
 
         for (int faceNum : checkFullHouse) {
             if (faceNum == 3) {
-                return true;
+                hasThree = true;
             }
             if (faceNum == 2) {
-                return true;
+                hasTwo = true;
             }
         }
-        return false;
+        return hasThree && hasTwo;
     }
 
 }
